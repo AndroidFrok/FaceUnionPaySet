@@ -1,0 +1,4 @@
+include ':FaceMultiFeature'
+include ':FaceFeature'
+include ':Commercial'
+rootProject.name='FaceUnionPaySet'

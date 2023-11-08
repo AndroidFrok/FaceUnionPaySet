@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_union_pay_constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detail.UnionPayActivity">
+
+    <TextView
+        android:id="@+id/tv_union_pay_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="相机信息"
+        app:layout_constraintBottom_toTopOf="@id/tv_union_pay_face"
+        app:layout_constraintEnd_toStartOf="@id/switch_union_pay_mode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gl_union_pay_face" />
+    <TextView
+        android:id="@+id/tv_union_pay_face"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="人脸算法初始化中，请等待......"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/switch_union_pay_mode"
+        app:layout_constraintTop_toBottomOf="@id/tv_union_pay_info" />
+
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/switch_union_pay_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:checked="false"
+        android:text="人脸模式"
+        android:textOff="扫码模式"
+        android:textOn="人脸模式"
+        app:layout_constraintBottom_toTopOf="@id/switch_union_pay_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gl_union_pay_face" />
+
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/switch_union_pay_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:checked="false"
+        android:text="保存数据"
+        app:layout_constraintBottom_toTopOf="@id/btn_union_pay_auth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switch_union_pay_mode" />
+
+    <Button
+        android:id="@+id/btn_union_pay_auth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="授权信息"
+        app:layout_constraintBottom_toTopOf="@+id/btn_union_pay_face"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_union_pay_save" />
+
+    <Button
+        android:id="@+id/bt_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="打开新页面"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_union_pay_face"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始||暂停"
+        app:layout_constraintBottom_toTopOf="@id/gl_union_pay_ir_dectect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_union_pay_auth" />
+    <com.imi.faceunionpayset.gl.DepthGLSurface
+        android:id="@+id/gl_union_pay_depth_detect"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintEnd_toStartOf="@+id/gl_union_pay_ir_dectect"
+        app:layout_constraintStart_toEndOf="@+id/gl_union_pay_face_dectect" />
+
+    <com.imi.faceunionpayset.gl.FaceGLSurface
+        android:id="@+id/gl_union_pay_face_dectect"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintEnd_toStartOf="@id/gl_union_pay_depth_detect"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.imi.faceunionpayset.gl.FaceGLSurface
+        android:id="@+id/gl_union_pay_face"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.imi.faceunionpayset.gl.FaceGLSurface
+        android:id="@+id/gl_union_pay_ir_dectect"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gl_union_pay_depth_detect" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detail.MainActivity">
+    <TextView
+        android:id="@+id/tv_main_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:text="过检模式只适用于过检\n正常情况请使用商用模式"/>
+
+    <Button
+        android:id="@+id/btn_main_commercial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="商用模式"
+        app:layout_constraintBottom_toTopOf="@id/btn_main_liveness"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_main_content" />
+
+    <Button
+        android:id="@+id/btn_main_liveness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="过检模式：活体"
+        app:layout_constraintBottom_toTopOf="@id/btn_main_quality"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_main_commercial" />
+
+    <Button
+        android:id="@+id/btn_main_quality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="过检模式：质量评估"
+        app:layout_constraintBottom_toTopOf="@id/btn_main_test_load"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_main_liveness" />
+
+    <Button
+        android:id="@+id/btn_main_test_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>
