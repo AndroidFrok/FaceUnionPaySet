@@ -1,5 +1,9 @@
 package com.imi.facefeature.detail;
 
+import static com.imi.facefeature.Constant.IMAGE_HEIGHT;
+import static com.imi.facefeature.Constant.IMAGE_WIDTH;
+import static com.imi.facefeature.Constant.TEST_MODE;
+
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,10 +20,6 @@ import com.imi.camera.listener.OnOpenCameraListener;
 import com.imi.facefeature.R;
 import com.imi.facefeature.helper.ImiCameraHelper;
 import com.imi.facefeature.helper.PermissionHelper;
-
-import static com.imi.facefeature.Constant.IMAGE_HEIGHT;
-import static com.imi.facefeature.Constant.IMAGE_WIDTH;
-import static com.imi.facefeature.Constant.TEST_MODE;
 
 /**
  * @author TianLong
@@ -94,19 +94,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
-        // TODO: 2020/3/27  仅用于测试
-//        mHandler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                if (i > 0 && i <= 300) {
-//                    Intent intent = new Intent(MainActivity.this, UnionPayActivity.class);
-//                    intent.putExtra("count", i);
-//                    startActivity(intent);
-//                    Log.w(TAG, "测试结果：" + i);
-//                    i++;
-//                }
-//            }
-//        }, 500);
+        //    2020/3/27  仅用于测试
+        /*mHandler.postDelayed(() -> {
+            if (i > 0 && i <= 300) {
+                Intent intent = new Intent(MainActivity.this, UnionPayActivity.class);
+                intent.putExtra("count", i);
+                startActivity(intent);
+                Log.w(TAG, "测试结果：" + i);
+                i++;
+            }
+        }, 500);*/
     }
 
     @Override
