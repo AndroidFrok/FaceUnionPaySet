@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mTestBtn = findViewById(R.id.btn_main_test_load);
         mTestBtn.setOnClickListener(this);
+        findViewById(R.id.btn_open).setOnClickListener(view -> {
+            openCam();
+        });
 
         if (!TEST_MODE) {
             mTestBtn.setVisibility(View.GONE);
@@ -59,6 +62,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //相机初始化
         ImiCameraHelper.getInstance().init(this, this, true);
         mImiCamera = ImiCameraHelper.getInstance().getImiCamera();
+    }
+
+    private void openCam() {
+
     }
 
     @Override

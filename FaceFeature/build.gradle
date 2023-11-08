@@ -32,6 +32,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    /*packagingOptions{
+        exclude 'lib/arm64-v8a/libimiFaceFeat.so'
+    }*/
 }
 
 dependencies {
@@ -42,7 +45,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation(name: 'ImiFaceSdk_faceidcom_04.00.00.220727_1.3.2', ext: 'aar')
-//    implementation(name: 'ImiFaceSdk_faceidcom_02.01.22.200802_1.1.11', ext: 'aar')
+//    implementation(name: 'ImiFaceSdk_faceidcom_04.00.00.220727_1.3.2', ext: 'aar')
+    implementation(name: 'ImiFaceSdk_faceidcom_02.01.22.200802_1.1.11', ext: 'aar')
     implementation(name: 'ImiFaceFeature_20200702_1.0.2',ext: 'aar')
 }
