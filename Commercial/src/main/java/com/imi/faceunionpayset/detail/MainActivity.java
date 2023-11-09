@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void run() {
                 ImiCameraHelper.getInstance().init(MainActivity.this, MainActivity.this, true);
                 mImiCamera = ImiCameraHelper.getInstance().getImiCamera();
+
             }
         }).start();
     }
@@ -190,6 +191,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onOpenCameraSuccess() {
+        Log.i("xxx","sn = "+mImiCamera.getSn());
         isCameraInit = true;
         if (mImiCamera.getCameraOrientation()== CameraOrientation.PORTRAIT){
             IMAGE_WIDTH = 480;

@@ -70,7 +70,7 @@ import static com.imi.sdk.image.ImageInfo.IMGFMT_RGB;
  * @author TianLong
  */
 public class UnionPayActivity extends AppCompatActivity implements OnSessionInitializeListener, View.OnClickListener, OnFrameAvailableListener, CompoundButton.OnCheckedChangeListener {
-    private final String TAG = UnionPayActivity.class.getSimpleName() + "-" + UnionPayActivity.this.hashCode();
+    private final String TAG = "xxx";
     private ConstraintLayout mConstraintLayout;
     private FaceGLSurface mFaceGLSurface;
     private FaceGLSurface mFaceDetectGLSurface;
@@ -625,6 +625,7 @@ public class UnionPayActivity extends AppCompatActivity implements OnSessionInit
             @Override
             public void run() {
                 try {
+                    Log.i("xxx","正在复制模型文件到：" + FileHelper.getInstance().getFaceModelFolderPath());
                     showContent("正在复制模型文件到：" + FileHelper.getInstance().getFaceModelFolderPath());
                     String[] paths = getAssets().list("model");
                     for (String path : paths) {
